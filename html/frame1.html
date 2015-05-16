@@ -31,16 +31,30 @@
 <script type="text/javascript">
 	apiready = function (){
 		alert('Hi, I am frame1');
-		
+		api.confirm({
+		    title: 'testtitle',
+		    msg: 'testmsg',
+		    buttons:['确定', '取消']
+		},function(ret,err){
+		    if(ret.buttonIndex == 1){
+		        api.alert({msg: '点击了确定'});
+		    }
+		});
 		var btn = document.getElementById('close');
 		btn.onclick = function (){
 		
-			var msg = '杨琳是傻叉';
-			api.alert({
-		        title: 'openApp',
-		        msg: msg,
-		        buttons: ['确定']
-		    })
+			api.openApp({
+			    androidPkg: 'android.intent.action.VIEW',
+			    mimeType: 'text/html',
+			    uri: 'http://www.baidu.com'
+			},function(ret,err){
+			    var msg = JSON.stringify(ret);
+			    api.alert({
+			        title: 'openApp',
+			        msg: msg,
+			        buttons: ['确定']
+			    });
+			});
 		}
 	}
 </script>
