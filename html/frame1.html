@@ -6,12 +6,42 @@
     <title>frame1</title>
 	<style>
 		.wrap1{
-			background-color:#aaa;
+			background-color:#eef;
 		}
 	</style>
 </head>
 <body>
-	<div class="wrap"></div>
+	<div class="wrap1">
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<p>Hey buddy, I am frame1</p>
+		<button id="close">Close Me</button>
+	</div>
 </body>
-
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+	apiready = function (){
+		alert('Hi, I am frame1');
+		
+		var btn = document.getElementById('close');
+		btn.onclick = function (){
+		
+			var msg = '杨琳是傻叉';
+			api.alert({
+		        title: 'openApp',
+		        msg: msg,
+		        buttons: ['确定']
+		    })
+		}
+	}
+</script>
 </html>

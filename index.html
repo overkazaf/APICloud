@@ -30,21 +30,16 @@
 </body>
 <script type="text/javascript" src="script/api.js"></script>
 <script type="text/javascript">
-    apiready = function () {
-    	api.openSlidLayout({
-                leftEdge:80,
-                type:'left',
-                fixedPane:{
-                    name: 'homeFixed',
-                    url: './html/frame1.html'
-                },
-                slidPane:{
-                    name: 'homeSlide',
-                    url: './html/frame2.html'
-                }
-            }, function(ret) {
-            }
-        );
-    }
+	apiready = function (){
+		var winH = api.winHeight,
+			winW = api.winWidth;
+			
+			alert(winW + ':' + winH);
+			api.openWin({
+			    name: 'page1',
+			    url: './html/frame1.html',
+			    pageParam: {name: 'test'}
+			});
+	}
 </script>
 </html>
