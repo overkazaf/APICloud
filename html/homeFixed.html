@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="overkazaf" />
+	</head>
+	<body></body>
+	<script>
+		window.apiready = function() {
+			var personalCenter = api.require('personalCenter');
+			personalCenter.open({
+				imgPath : 'http://h.hiphotos.baidu.com/image/pic/item/42166d224f4a20a40155f84e92529822730ed0f4.jpg',
+				placeholderImg : 'widget://res/filterMe.png',
+				btnArray : [{
+					bgImg : 'widget://res/personal_btn_nor.png',
+					selectedImg : 'widget://res/personal_btn_sele.png'
+				}, {
+					bgImg : 'widget://res/personal_btn_nor.png',
+					selectedImg : 'widget://res/personal_btn_sele.png'
+				}, {
+					bgImg : 'widget://res/personal_btn_nor.png',
+					selectedImg : 'widget://res/personal_btn_sele.png'
+				}]
+			}, function(ret, err) {
+				
+			});
+		}
+	</script>
+</html>

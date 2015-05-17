@@ -1,45 +1,34 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <title>底部导航</title>
-    <link rel="stylesheet" type="text/css" href="css/api.css"/>
-
-    <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-        }
-
-        #wrap {
-            height: 100%;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-flex-flow: column;
-            flex-flow: column;
-            background-color: #baff00;
-        }
-
-    </style>
-</head>
-<body>
-	<div id="wrap"></div>
-</body>
-<script type="text/javascript" src="script/api.js"></script>
-<script type="text/javascript">
-	apiready = function (){
-		var winH = api.winHeight,
-			winW = api.winWidth;
-			
-			alert(winW + ':' + winH);
-			api.openWin({
-			    name: 'page1',
-			    url: './html/frame1.html',
-			    pageParam: {name: 'test'}
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>底部导航</title>
+		<link rel="stylesheet" type="text/css" href="css/api.css"/>
+	</head>
+	<body></body>
+	<script type="text/javascript" src="script/api.js"></script>
+	<script type="text/javascript">
+		window.apiready = function() {
+			api.openSlidLayout({
+				leftEdge : api.winWidth / 6.67,
+				type : 'left',
+				fixedPane : {
+					name : 'homeFixed',
+					url : './html/homeFixed.html'
+				},
+				slidPane : {
+					name : 'homeSlid',
+					url : './html/homeSlid.html'
+				}
+			}, function(ret) {
+				/* 暂时不需要做任何事. */
+				api.alert({
+					msg : 'aaa ' + ret
+				}, function(ret, err) {
+					//coding...
+				});
 			});
-	}
-</script>
+		};
+	</script>
 </html>

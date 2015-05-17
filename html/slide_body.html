@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>Hello APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/idangerous.swiper.css">
+		<style>
+			.swiper-slide img {width: 100%;}
+			.productList{width:100%;height:auto;background-color:#baff00;margin-top:10px;}
+			.productList ul.product{margin:0;padding:0;}
+			.productList ul.product li.product-item{width:100%;line-height:48px;background-color:#eef;}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="../image/slide1.jpg">
+				</div>
+				<div class="swiper-slide">
+					<img src="../image/slide2.jpg">
+				</div>
+				<div class="swiper-slide">
+					<img src="../image/slide3.jpg">
+				</div>
+				<div class="swiper-slide">
+					<img src="../image/slide4.jpg">
+				</div>
+			</div>
+			<div class="pagination"></div>
+		</div>
+		
+		<div class="productList">
+			<ul class="product">
+				<li class="product-item">1</li>
+				<li class="product-item">2</li>
+				<li class="product-item">3</li>
+				<li class="product-item">4</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/idangerous.swiper.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var mySwiper = new Swiper('.swiper-container', {
+				mode : 'horizontal',
+				loop : true,
+				speed : 750,
+				pagination : '.pagination'
+			});
+			mySwiper.startAutoplay();
+		}
+	</script>
+</html>
